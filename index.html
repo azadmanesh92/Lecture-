@@ -868,7 +868,7 @@
             }
         }
 
-        /* ADDED: Responsive scaling for all screens */
+        /* ADDED: Responsive scaling for ALL screens - UPDATED FLEXIBLE APPROACH */
         .scaling-wrapper {
             position: fixed;
             top: 0;
@@ -889,17 +889,9 @@
             position: relative;
         }
 
-        /* Media queries for scaling */
-        @media (max-width: 1920px) and (max-height: 1080px) {
-            .presentation-container {
-                transform: scale(calc(min(100vw / 1920, 100vh / 1080)));
-            }
-        }
-
-        @media (min-width: 1921px) {
-            .presentation-container {
-                transform: scale(calc(min(100vw / 1920, 100vh / 1080)));
-            }
+        /* Dynamic scaling for ALL screens */
+        .presentation-container {
+            transform: scale(calc(min(100vw / 1920, 100vh / 1080)));
         }
 
         /* Ensure cosmic background and stars cover full screen */
@@ -909,6 +901,28 @@
             height: 100vh !important;
             top: 0 !important;
             left: 0 !important;
+            transform: none !important;
+        }
+
+        /* Fix for decorative lines to scale properly */
+        .decorative-line {
+            position: fixed !important;
+            transform: none !important;
+        }
+
+        /* Ensure navigation buttons stay clickable */
+        .navigation {
+            position: absolute !important;
+            bottom: 40px;
+            right: 40px;
+            transform: none !important;
+        }
+
+        /* Ensure progress bar is visible */
+        .progress-bar {
+            position: absolute !important;
+            bottom: 0;
+            left: 0;
             transform: none !important;
         }
     </style>
